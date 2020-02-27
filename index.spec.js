@@ -75,4 +75,14 @@ describe('Testing rounding is correct', function () {
     it('5101053869.999999995 should be rounded to 5101053870.00', () => {
         assert.equal(round(5101053869.999999995, 2), 5101053870.00);
     });
+
+
+    it('1.005 should be rounded to 1.01', () => {
+        assert.equal(round(1.005, 2), 1.01);
+    });
+
+
+    it('1111.245 should be rounded to 1111.25', () => {
+        assert.equal(round(1111.245, 2), 1111.25);
+    });
 });
