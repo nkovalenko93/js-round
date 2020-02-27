@@ -1,0 +1,30 @@
+{
+  "name": "js-round",
+  "version": "0.0.1",
+  "description": "Library for rounding JS numbers",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha index.spec.js",
+    "lint": "eslint *.js",
+    "lint-fix": "eslint *.js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkovalenko93/js-round.git"
+  },
+  "keywords": [
+    "js",
+    "round"
+  ],
+  "author": "Nikolai Kovalenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nkovalenko93/js-round/issues"
+  },
+  "homepage": "https://github.com/nkovalenko93/js-round#readme",
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-google": "0.14.0",
+    "mocha": "7.1.0"
+  }
+}
