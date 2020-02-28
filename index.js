@@ -2,7 +2,7 @@ const round = function (number, precision) {
     let numberString = number.toString();
     if (numberString.indexOf('.') < 0) {
         numberString += '.';
-        for (let i = 0; i < precision; i++) {
+        for (let i = 0; i <= precision; i++) {
             numberString += '0';
         }
     }
@@ -26,13 +26,12 @@ const round = function (number, precision) {
         }
 
         if (i === dotIndex) {
-            console.log('adding dot');
             newNumberArray.push('.');
             dotIsPushed = true;
         }
 
         if (i >= lastRoundingNumberIndex) {
-            if (currentNumber >= 5) {
+            if ((i === lastRoundingNumberIndex) && (currentNumber >= 5)) {
                 rest += 1;
             }
             newNumberArray.push('0');

@@ -12,18 +12,33 @@ describe('Testing rounding is correct', function () {
     });
 
 
-    it('892.29448 should be rounded to 892.30', () => {
-        assert.equal(round(892.29448, 2), 892.30);
+    it('892.29448 should be rounded to 892.29', () => {
+        assert.equal(round(892.29448, 2), 892.29);
     });
 
 
-    it('71086.2344448 should be rounded to 71086.2345', () => {
-        assert.equal(round(71086.2344448, 4), 71086.2345);
+    it('892.29548 should be rounded to 892.30', () => {
+        assert.equal(round(892.29548, 2), 892.30);
     });
 
 
-    it('389926.12448 should be rounded to 389926.13', () => {
-        assert.equal(round(389926.12448, 2), 389926.13);
+    it('71086.2344448 should be rounded to 71086.2344', () => {
+        assert.equal(round(71086.2344448, 4), 71086.2344);
+    });
+
+
+    it('71086.2344548 should be rounded to 71086.2345', () => {
+        assert.equal(round(71086.2344548, 4), 71086.2345);
+    });
+
+
+    it('389926.12448 should be rounded to 389926.12', () => {
+        assert.equal(round(389926.12448, 2), 389926.12);
+    });
+
+
+    it('389926.12548 should be rounded to 389926.13', () => {
+        assert.equal(round(389926.12548, 2), 389926.13);
     });
 
 
@@ -32,23 +47,23 @@ describe('Testing rounding is correct', function () {
     });
 
 
-    it('892.29448 should be rounded to 892.30', () => {
-        assert.equal(round(892.29448, 2), 892.30);
+    it('892.9944448 should be rounded to 892.99', () => {
+        assert.equal(round(892.9944448, 2), 892.99);
     });
 
 
-    it('892.9944448 should be rounded to 893.00', () => {
-        assert.equal(round(892.9944448, 2), 893.00);
+    it('892.9954448 should be rounded to 893.00', () => {
+        assert.equal(round(892.9954448, 2), 893.00);
     });
 
 
-    it('999.9944448 should be rounded to 1000.00', () => {
-        assert.equal(round(999.9944448, 2), 1000.00);
+    it('999.9944448 should be rounded to 999.99', () => {
+        assert.equal(round(999.9944448, 2), 999.99);
     });
 
 
-    it('999.9944448 should be rounded to 1000.00', () => {
-        assert.equal(round(999.9944448, 2), 1000.00);
+    it('999.9954448 should be rounded to 1000.00', () => {
+        assert.equal(round(999.9954448, 2), 1000.00);
     });
 
 
@@ -67,8 +82,13 @@ describe('Testing rounding is correct', function () {
     });
 
 
-    it('12345 should be rounded to 12400.00', () => {
-        assert.equal(round(12345, -2), 12400.00);
+    it('12345 should be rounded to 12300.00', () => {
+        assert.equal(round(12345, -2), 12300.00);
+    });
+
+
+    it('12355 should be rounded to 12400.00', () => {
+        assert.equal(round(12355, -2), 12400.00);
     });
 
 
@@ -84,5 +104,25 @@ describe('Testing rounding is correct', function () {
 
     it('1111.245 should be rounded to 1111.25', () => {
         assert.equal(round(1111.245, 2), 1111.25);
+    });
+
+
+    it('734.4648 should be rounded to 734.46', () => {
+        assert.equal(round(734.4648, 2), 734.46);
+    });
+
+
+    it('734 should be rounded to 734.00', () => {
+        assert.equal(round(734, 2), 734.00);
+    });
+
+
+    it('734 should be rounded to 734.0000', () => {
+        assert.equal(round(734, 4), 734.0000);
+    });
+
+
+    it('123456 should be rounded to 120000', () => {
+        assert.equal(round(123456, -4), 120000);
     });
 });
