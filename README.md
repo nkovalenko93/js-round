@@ -2,8 +2,11 @@
 Library for correct rounding JS number
 
 ```
-const {round} = require('js-round'); // import {round} from 'js-round';
+const {round, roundAsString} = require('js-round'); // import {round} from 'js-round';
 
 const nubmer = round(123.456, 2);
-assert number === 123.46
+assert number === 123.46;
+
+const nubmer = roundAsString('123.456', 2);
+assert number === '123.46';
 ```
