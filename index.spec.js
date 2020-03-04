@@ -1,5 +1,5 @@
 const assert = require('assert');
-const {round} = require('./index');
+const {round, roundAsString} = require('./index');
 
 describe('Testing rounding is correct', function () {
     it('12345.65455466543 should be rounded to 12345.6546', () => {
@@ -29,6 +29,12 @@ describe('Testing rounding is correct', function () {
 
     it('71086.2344548 should be rounded to 71086.2345', () => {
         assert.equal(round(71086.2344548, 4), 71086.2345);
+    });
+
+
+
+    it('71086.2344548 should be rounded to 71086.2345', () => {
+        assert.equal(roundAsString('71086.2344548', 4), '71086.2345');
     });
 
 
@@ -124,5 +130,35 @@ describe('Testing rounding is correct', function () {
 
     it('123456 should be rounded to 120000', () => {
         assert.equal(round(123456, -4), 120000);
+    });
+
+
+    it('99999999999999999.993 should be rounded to 99999999999999999.99', () => {
+        assert.equal(round('99999999999999999.993', 2), 99999999999999999.99);
+    })
+
+
+    it('12345678912345678910246.456 should be rounded to 12345678912345678910246.46', () => {
+        assert.equal(roundAsString('12345678912345678910246.456', 2), '12345678912345678910246.46');
+    });
+
+
+    it('12345678912345678910246 should be rounded to 12345678912345678910246.00', () => {
+        assert.equal(roundAsString('12345678912345678910246', 2), '12345678912345678910246.00');
+    });
+
+
+    it('-10345.567 should be rounded to -10345.57', () => {
+        assert.equal(roundAsString(-10345.567, 2), -10345.57);
+    });
+
+
+    it('-10345.567 should be rounded to -10345.57', () => {
+        assert.equal(roundAsString('-10345.567', 2), '-10345.57');
+    });
+
+
+    it('-10000 should be rounded to -10000', () => {
+        assert.equal(roundAsString('-10000', 0), '-10000');
     });
 });

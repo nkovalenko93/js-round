@@ -1,6 +1,6 @@
 {
   "name": "js-round",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Library for rounding JS numbers",
   "main": "index.js",
   "scripts": {

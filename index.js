@@ -1,8 +1,14 @@
-const round = function (number, precision) {
+const roundAsString = function (number, precision) {
     let numberString = number.toString();
+    let isNegative = false;
+    if (numberString[0] === '-') {
+        isNegative = true;
+        numberString = numberString.substr(1);
+    }
+
     if (numberString.indexOf('.') < 0) {
         numberString += '.';
-        for (let i = 0; i <= precision; i++) {
+        for (let i = 1; i <= precision; i++) {
             numberString += '0';
         }
     }
@@ -55,8 +61,27 @@ const round = function (number, precision) {
             newNumberArray.push(rest[i]);
         }
     }
-    return Number(newNumberArray.reverse().join(''));
+
+    let resultNumberString = newNumberArray.reverse().join('');
+    if (precision > 0) {
+       resultNumberString = resultNumberString.substr(0, resultNumberString.indexOf('.') + precision + 1);
+    }
+
+    if (isNegative) {
+        resultNumberString = ('-' + resultNumberString);
+    }
+
+    if (resultNumberString[resultNumberString.length - 1] === '.') {
+        resultNumberString = resultNumberString.substr(0, resultNumberString.length - 1);
+    }
+
+    return resultNumberString;
 };
 
 
-module.exports = {round: round};
+const round = function(number,precision) {
+    return Number(roundAsString(number, precision));
+}
+
+
+module.exports = {round: round, roundAsString: roundAsString};
